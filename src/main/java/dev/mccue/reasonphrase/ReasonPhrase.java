@@ -6,8 +6,11 @@ import java.util.Map;
  * Provides a lookup from HTTP status code to a recommended reason phrase.
  *
  * <p>
- *     For more details, consult the HTTP RFC document.
- *     <a href="https://www.rfc-editor.org/rfc/rfc9110.html#section-15">https://www.rfc-editor.org/rfc/rfc9110.html#section-15</a>
+ *     For more details, consult the HTTP RFC document or the MDN docs.
+ *     <ul>
+ *         <li><a href="https://www.rfc-editor.org/rfc/rfc9110.html#section-15">https://www.rfc-editor.org/rfc/rfc9110.html#section-15</a></li>
+ *         <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/103">https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/103</a></li>
+ *     </ul>
  * </p>
  */
 public final class ReasonPhrase {
@@ -16,6 +19,8 @@ public final class ReasonPhrase {
     private static final Map<Integer, String> STATUS_TO_REASON = Map.ofEntries(
             Map.entry(100, "Continue"),
             Map.entry(101, "Switching Protocols"),
+            Map.entry(102, "Processing"),
+            Map.entry(103, "Early Hints"),
             Map.entry(200, "OK"),
             Map.entry(201, "Created"),
             Map.entry(202, "Accepted"),
@@ -23,6 +28,9 @@ public final class ReasonPhrase {
             Map.entry(204, "No Content"),
             Map.entry(205, "Reset Content"),
             Map.entry(206, "Partial Content"),
+            Map.entry(207, "Multi-Status"),
+            Map.entry(208, "Already Reported"),
+            Map.entry(226, "IM Used"),
             Map.entry(300, "Multiple Choices"),
             Map.entry(301, "Moved Permanently"),
             Map.entry(302, "Found"),
@@ -30,6 +38,7 @@ public final class ReasonPhrase {
             Map.entry(304, "Not Modified"),
             Map.entry(305, "Use Proxy"),
             Map.entry(307, "Temporary Redirect"),
+            Map.entry(308, "Permanent Redirect"),
             Map.entry(400, "Bad Request"),
             Map.entry(401, "Unauthorized"),
             Map.entry(402, "Payment Required"),
@@ -48,12 +57,28 @@ public final class ReasonPhrase {
             Map.entry(415, "Unsupported Media Type"),
             Map.entry(416, "Requested range not satisfiable"),
             Map.entry(417, "Expectation Failed"),
+            Map.entry(418, "I'm a teapot"),
+            Map.entry(421, "Misdirected Request"),
+            Map.entry(422, "Unprocessable Content"),
+            Map.entry(423, "Locked"),
+            Map.entry(424, "Failed Dependency"),
+            Map.entry(425, "Too Early"),
+            Map.entry(426, "Upgrade Required"),
+            Map.entry(428, "Precondition Required"),
+            Map.entry(429, "Too Many Requests"),
+            Map.entry(431, "Request Header Fields Too Large"),
+            Map.entry(451, "Unavailable For Legal Reasons"),
             Map.entry(500, "Internal Server Error"),
             Map.entry(501, "Not Implemented"),
             Map.entry(502, "Bad Gateway"),
             Map.entry(503, "Service Unavailable"),
             Map.entry(504, "Gateway Time-out"),
-            Map.entry(505, "HTTP Version not supported")
+            Map.entry(505, "HTTP Version not supported"),
+            Map.entry(506, "Variant Also Negotiates"),
+            Map.entry(507, "Insufficient Storage"),
+            Map.entry(508, "Loop Detected"),
+            Map.entry(510, "Not Extended"),
+            Map.entry(511, "Network Authentication Required")
     );
 
     /**

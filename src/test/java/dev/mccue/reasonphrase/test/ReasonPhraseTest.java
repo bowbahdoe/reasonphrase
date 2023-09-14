@@ -29,6 +29,18 @@ public class ReasonPhraseTest {
     }
 
     @Test
+    public void test102() {
+        assertEquals(ReasonPhrase.forStatus(102), "Processing");
+        assertEquals(ReasonPhrase.forStatus(102, "fallback"), "Processing");
+    }
+
+    @Test
+    public void test103() {
+        assertEquals(ReasonPhrase.forStatus(103), "Early Hints");
+        assertEquals(ReasonPhrase.forStatus(103, "fallback"), "Early Hints");
+    }
+
+    @Test
     public void test200() {
         assertEquals(ReasonPhrase.forStatus(200), "OK");
         assertEquals(ReasonPhrase.forStatus(200, "fallback"), "OK");
@@ -72,6 +84,24 @@ public class ReasonPhraseTest {
     }
 
     @Test
+    public void test207() {
+        assertEquals(ReasonPhrase.forStatus(207), "Multi-Status");
+        assertEquals(ReasonPhrase.forStatus(207, "fallback"), "Multi-Status");
+    }
+
+    @Test
+    public void test208() {
+        assertEquals(ReasonPhrase.forStatus(208), "Already Reported");
+        assertEquals(ReasonPhrase.forStatus(208, "fallback"), "Already Reported");
+    }
+
+    @Test
+    public void test226() {
+        assertEquals(ReasonPhrase.forStatus(226), "IM Used");
+        assertEquals(ReasonPhrase.forStatus(226, "fallback"), "IM Used");
+    }
+
+    @Test
     public void test300() {
         assertEquals(ReasonPhrase.forStatus(300), "Multiple Choices");
         assertEquals(ReasonPhrase.forStatus(300, "fallback"), "Multiple Choices");
@@ -112,6 +142,12 @@ public class ReasonPhraseTest {
     public void test307() {
         assertEquals(ReasonPhrase.forStatus(307), "Temporary Redirect");
         assertEquals(ReasonPhrase.forStatus(307, "fallback"), "Temporary Redirect");
+    }
+
+    @Test
+    public void test308() {
+        assertEquals(ReasonPhrase.forStatus(308), "Permanent Redirect");
+        assertEquals(ReasonPhrase.forStatus(308, "fallback"), "Permanent Redirect");
     }
 
     @Test
@@ -224,6 +260,72 @@ public class ReasonPhraseTest {
     }
 
     @Test
+    public void test418() {
+        assertEquals(ReasonPhrase.forStatus(418), "I'm a teapot");
+        assertEquals(ReasonPhrase.forStatus(418, "fallback"), "I'm a teapot");
+    }
+
+    @Test
+    public void test421() {
+        assertEquals(ReasonPhrase.forStatus(421), "Misdirected Request");
+        assertEquals(ReasonPhrase.forStatus(421, "fallback"), "Misdirected Request");
+    }
+
+    @Test
+    public void test422() {
+        assertEquals(ReasonPhrase.forStatus(422), "Unprocessable Content");
+        assertEquals(ReasonPhrase.forStatus(422, "fallback"), "Unprocessable Content");
+    }
+
+    @Test
+    public void test423() {
+        assertEquals(ReasonPhrase.forStatus(423), "Locked");
+        assertEquals(ReasonPhrase.forStatus(423, "fallback"), "Locked");
+    }
+
+    @Test
+    public void test424() {
+        assertEquals(ReasonPhrase.forStatus(424), "Failed Dependency");
+        assertEquals(ReasonPhrase.forStatus(424, "fallback"), "Failed Dependency");
+    }
+
+    @Test
+    public void test425() {
+        assertEquals(ReasonPhrase.forStatus(425), "Too Early");
+        assertEquals(ReasonPhrase.forStatus(425, "fallback"), "Too Early");
+    }
+
+    @Test
+    public void test426() {
+        assertEquals(ReasonPhrase.forStatus(426), "Upgrade Required");
+        assertEquals(ReasonPhrase.forStatus(426, "fallback"), "Upgrade Required");
+    }
+
+    @Test
+    public void test428() {
+        assertEquals(ReasonPhrase.forStatus(428), "Precondition Required");
+        assertEquals(ReasonPhrase.forStatus(428, "fallback"), "Precondition Required");
+    }
+
+    @Test
+    public void test429() {
+        assertEquals(ReasonPhrase.forStatus(429), "Too Many Requests");
+        assertEquals(ReasonPhrase.forStatus(429, "fallback"), "Too Many Requests");
+    }
+
+    @Test
+    public void test431() {
+        assertEquals(ReasonPhrase.forStatus(431), "Request Header Fields Too Large");
+        assertEquals(ReasonPhrase.forStatus(431, "fallback"), "Request Header Fields Too Large");
+    }
+
+    @Test
+    public void test451() {
+        assertEquals(ReasonPhrase.forStatus(451), "Unavailable For Legal Reasons");
+        assertEquals(ReasonPhrase.forStatus(451, "fallback"), "Unavailable For Legal Reasons");
+    }
+
+    @Test
     public void test500() {
         assertEquals(ReasonPhrase.forStatus(500), "Internal Server Error");
         assertEquals(ReasonPhrase.forStatus(500, "fallback"), "Internal Server Error");
@@ -258,4 +360,37 @@ public class ReasonPhraseTest {
         assertEquals(ReasonPhrase.forStatus(505), "HTTP Version not supported");
         assertEquals(ReasonPhrase.forStatus(505, "fallback"), "HTTP Version not supported");
     }
+
+    @Test
+    public void test506() {
+        assertEquals(ReasonPhrase.forStatus(506), "Variant Also Negotiates");
+        assertEquals(ReasonPhrase.forStatus(506, "fallback"), "Variant Also Negotiates");
+    }
+
+    @Test
+    public void test507() {
+        assertEquals(ReasonPhrase.forStatus(507), "Insufficient Storage");
+        assertEquals(ReasonPhrase.forStatus(507, "fallback"), "Insufficient Storage");
+    }
+
+    @Test
+    public void test508() {
+        assertEquals(ReasonPhrase.forStatus(508), "Loop Detected");
+        assertEquals(ReasonPhrase.forStatus(508, "fallback"), "Loop Detected");
+    }
+
+    @Test
+    public void test510() {
+        assertEquals(ReasonPhrase.forStatus(510),  "Not Extended");
+        assertEquals(ReasonPhrase.forStatus(510, "fallback"),  "Not Extended");
+    }
+
+    @Test
+    public void test511() {
+        assertEquals(ReasonPhrase.forStatus(511), "Network Authentication Required");
+        assertEquals(ReasonPhrase.forStatus(511, "fallback"), "Network Authentication Required");
+    }
+
+
+
 }
